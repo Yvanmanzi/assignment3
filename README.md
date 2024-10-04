@@ -17,7 +17,7 @@ The first step is to create a new user with administrative privileges. The follo
 CREATE USER C##yv_plsqlauca IDENTIFIED BY auca;
 GRANT ALL PRIVILEGES TO C##yv_plsqlauca;
 ```
-- ``C##af_plsqlauca``: The new user’s name. The C## prefix indicates a common user, which can be used in all PDBs.
+- ``C##yv_plsqlauca``: The new user’s name. The C## prefix indicates a common user, which can be used in all PDBs.
 - ``GRANT ALL PRIVILEGES``: Grants the user all privileges needed to manage databases.
 
 ![CREATIN USER](create%20user.png)
@@ -42,7 +42,7 @@ Run the following command to create the PDB, specifying the admin user and the f
 ``` sql
 CREATE PLUGGABLE DATABASE yv_to_delete_pdb
 ADMIN USER yv_plsqlauca IDENTIFIED BY auca
-FILE_NAME_CONVERT = ('C:\APP\HP\PRODUCT\21C\ORADATA\XE\PDBSEED\', 'C:\APP\HP\PRODUCT\21C\ORADATA\XE\PDBSEED\\no_to_delete_pdb\');
+FILE_NAME_CONVERT = ('C:\APP\HP\PRODUCT\21C\ORADATA\XE\PDBSEED\', 'C:\APP\HP\PRODUCT\21C\ORADATA\XE\PDBSEED\\yv_to_delete_pdb\');
 ```
 - ``yv_to_delete_pdb``: The name of the PDB to be created.
 - ``ADMIN USER yv_to_delete_pdb``: The admin user for the new PDB.
